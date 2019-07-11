@@ -29,6 +29,6 @@ public class PonteiroController extends DefaultController{
 
     @RequestMapping(value = "ponteiros/{tipo}", method = RequestMethod.GET)
       public ResponseEntity listaPonteiros(@PathVariable("tipo") String tipo){
-        return ResponseEntity.ok("abracadabra");
+      return "{\"ponteiro\":\"abracadabra\"}";
     }
 }
