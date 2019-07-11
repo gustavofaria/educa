@@ -25,10 +25,6 @@ public class PonteiroController extends DefaultController{
 
     @GetMapping("ponteiros")
     public String getPonteiro(@RequestParam(value="tipo", required=false) String tipo){
-        List<Ponteiro> ponteiros = ponteiroRepository.findByTipo(tipo);
-        if(ponteiros.size()==0){
-            throw new ValidationException("ponteiro não encontrado");
-        }
-        return ponteiros.get(0).getTipo();
+        return "abracadabra";
     }
 }
