@@ -11,6 +11,7 @@ import com.ufu.educa.entity.Ponteiro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -23,7 +24,7 @@ public class PonteiroController extends DefaultController{
     private PonteiroRepository ponteiroRepository;
 
     @GetMapping("ponteiros")
-    public String getPonteiro(@PathVariable String tipo){
+    public String getPonteiro(@RequestParam(value="tipo", required=false) String tipo){
         List<Ponteiro> ponteiros = ponteiroRepository.findByTipo(tipo);
         if(ponteiros.size()==0){
             throw new ValidationException("ponteiro não encontrado");
