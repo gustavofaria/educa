@@ -1,0 +1,5 @@
+com/ufu/educa/EducaApplication.class
+com/ufu/educa/DataSourceConfig.class
+com/ufu/educa/repository/PonteiroRepository.class
+com/ufu/educa/controller/PonteiroController.class
+com/ufu/educa/entity/Ponteiro.class
