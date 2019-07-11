@@ -6,11 +6,13 @@ import java.util.List;
 
 import javax.validation.ValidationException;
 
-import com.ufu.educa.entity.Ponteiro;
+// import com.ufu.educa.entity.Ponteiro;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -23,8 +25,10 @@ public class PonteiroController extends DefaultController{
     @Autowired
     private PonteiroRepository ponteiroRepository;
 
-    @GetMapping("ponteiros")
-    public String getPonteiro(@RequestParam(value="tipo", required=false) String tipo){
-        return "abracadabra";
+
+
+    @RequestMapping(value = "ponteiros/{tipo}", method = RequestMethod.GET)
+      public ResponseEntity listaPonteiros(@PathVariable("tipo") String tipo){
+        return ResponseEntity.ok("abracadabra");
     }
 }
